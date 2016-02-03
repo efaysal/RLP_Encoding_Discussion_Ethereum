@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+static void ashex(const unsigned char *bytes, int nbytes)
+/* Print bytes in hex format + newline */
+{
+   int i;
+ printf("Its hex is \n ");
+   for (i = 0; i < nbytes; i++)
+   	printf("%02X ", bytes[i]);
+   printf("\n");
+}
+
+int main()
+{
+   char easystring[] = "cafés";
+   unsigned char *datainter;
+   int nbytes;
+   char *lpszCopy;
+
+   /* Convert string to bytes */
+ 
+   datainter = (unsigned char*)easystring;
+   nbytes = strlen(easystring);
+printf("cafés has this number of bytes:  %d \n", nbytes);
+ashex(datainter, nbytes);
+   char easystring1[] = "cafés";
+  
+ /* Convert string to bytes */
+   
+   datainter = (unsigned char*)easystring1;
+   nbytes = strlen(easystring1);
+  printf("cafés has this number of bytes:  %d \n", nbytes);
+   ashex(datainter, nbytes);
+  return 0;
+}
+
+
